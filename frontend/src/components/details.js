@@ -1,6 +1,7 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, ScrollView, ActivityIndicator } from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, ScrollView, ActivityIndicator, Alert } from 'react-native';
 import { styled } from 'nativewind';
+import CustomBtn from './btn';
 
 
 const StyledView = styled(View);
@@ -12,7 +13,7 @@ const fakeData = [
         id:1,
         title:"Foldsack No. 1",
         presupuesto:109.95,
-        description:"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum umquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.",
         category:"men's clothing",
         date: '23-09-2022',
         location: 'Buenos Aires',
@@ -91,6 +92,22 @@ const Details = () => {
                 <Description description={item.description} deadline={item.deadline} />
                 <Empleador contratadorImage={item.contratadorImage} nombreContratador={item.contratadorNombre} presupuesto={item.presupuesto}/>
                 {/* <Category category={item.category} /> */}
+                <View style={styles.btn}>
+                    <CustomBtn 
+                        title="CONTACTAR"
+                        titleColor="#570e7e"
+                        buttonColor="#D9C6E3"
+                        buttonStyle={{
+                            borderColor: '#570e7e',
+                            borderWidth: 1
+                        }}
+                        onPress={() => Alert.alert('Boton de Contactar Presionado')}
+                    />
+                    <CustomBtn 
+                        title="APLICAR"
+                        onPress={() => Alert.alert('Boton de Aplicar Presionado')}
+                    />
+                </View>
             </View>
     );
 
@@ -119,8 +136,11 @@ const styles = StyleSheet.create({
   presupuesto: {
     height: 50,
     borderRadius: 10,
-  }
-  
+  },
+  btn: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  }  
 });
 
 export default Details;
