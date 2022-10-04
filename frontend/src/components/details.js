@@ -84,7 +84,7 @@ const Category = ({category}) => (
     </StyledView>
 )
 
-const Details = () => {    
+const Details = ({navigation}) => {    
     const renderItem = ({ item }) => ( 
             <View style={styles.container} className="rounded-md">
                 <Header title={item.title} price={item.price} />
@@ -105,7 +105,7 @@ const Details = () => {
                     />
                     <CustomBtn 
                         title="APLICAR"
-                        onPress={() => Alert.alert('Boton de Aplicar Presionado')}
+                        onPress={() => navigation.navigate('DetailsScreen')}
                     />
                 </View>
             </View>

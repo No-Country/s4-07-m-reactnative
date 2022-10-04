@@ -5,7 +5,7 @@ import Details from '../components/details';
 const HomeScreen = () => {
   return (
     <View>
-      <Details />
+      
     </View>
   );
 };
