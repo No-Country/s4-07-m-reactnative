@@ -6,7 +6,7 @@ import Faq from "./src/screens/Faq.js";
 import Profile from "./src/screens/Profile.js";
 import Notifications from "./src/screens/Notifications.js";
 import Chat from "./src/screens/Chat.js";
-import { Image, View } from "react-native";
+import { Image } from "react-native";
 
 // screens
 
@@ -20,6 +20,7 @@ const screenOptions = {
   tabBarLabel: () => {
     return null;
   },
+  headerShown: false,
 };
 
 function MyTabs() {
@@ -28,7 +29,9 @@ function MyTabs() {
       <Tab.Screen
         options={{
           tabBarIcon: () => (
-            <Image source={require("./assets/profile-icon.png")} />
+            <Image
+              source={require("./src/assets/Navigation/profile-icon.png")}
+            />
           ),
         }}
         name="Profile"
@@ -36,17 +39,23 @@ function MyTabs() {
       />
       <Tab.Screen
         options={{
+          title: "¿CÓMO PODEMOS AYUDARTE?",
+          headerShown: true,
+          headerStyle: { height: 84 },
+          headerTitle: { fontSize: 24 },
+          headerTitleStyle: { fontWeight: "700" },
+          headerTitleAlign: "center",
           tabBarIcon: () => (
-            <Image source={require("./assets/faqs-icon.png")} />
+            <Image source={require("./src/assets/Navigation/faqs-icon.png")} />
           ),
         }}
-        name="Faq"
+        name="FAQ'S"
         component={Faq}
       />
       <Tab.Screen
         options={{
           tabBarIcon: () => (
-            <Image source={require("./assets/home-icon.png")} />
+            <Image source={require("./src/assets/Navigation/home-icon.png")} />
           ),
         }}
         name="Home"
@@ -55,7 +64,9 @@ function MyTabs() {
       <Tab.Screen
         options={{
           tabBarIcon: () => (
-            <Image source={require("./assets/notification-icon.png")} />
+            <Image
+              source={require("./src/assets/Navigation/notification-icon.png")}
+            />
           ),
         }}
         name="Notifications"
@@ -64,7 +75,9 @@ function MyTabs() {
       <Tab.Screen
         options={{
           tabBarIcon: () => (
-            <Image source={require("./assets/messages-icon.png")} />
+            <Image
+              source={require("./src/assets/Navigation/messages-icon.png")}
+            />
           ),
         }}
         name="Chat"

@@ -1,13 +1,16 @@
 import React from "react";
-import { View, Text } from "react-native";
-import Details from '../components/details';
+import { ScrollView, Text } from "react-native";
+import JobCard from "../components/JobCard";
+import Search from "../components/Search/Search";
 
 const HomeScreen = () => {
   return (
-    <View>
-      
-    </View>
-  );
-};
+    <ScrollView >
+      <Search/>
+      <JobCard/>
+      <JobCard/>
+    </ScrollView>
+  )
+}
 
 export default HomeScreen;
